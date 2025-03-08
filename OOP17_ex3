@@ -1,0 +1,17 @@
+1( מה משמעות המושג safe thread ?
+
+Thread safe means that if can be run in multiple threads without causing errors or creating problems,
+like in the example given in the previous lecture about making the singleton thread safe using lock.
+
+2( האם פונ קציית ההוספה והמחיקה כאן הן safe-thread:
+https://github.com/pythonai170624/06.03.2025/blob/master/multi_threaded/thre
+ad_safe_hw1.py
+
+not thread safe, cause list could be empty on remove thus IndexError could occur,
+also add_items can get more then one thread thus elements order is not predictable.
+
+3( האם פונקציית ההוספה והמחיקה כאן הן safe-thread:
+https://github.com/pythonai170624/06.03.2025/blob/master/multi_threaded/thread_safe_hw2.py
+
+This is thread safe but using a lock is preferable to this manager.list() thing,
+just adding a lock after the for loops can solve this better i think.

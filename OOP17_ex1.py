@@ -28,8 +28,8 @@ class Student(ICloneable):
         self.grades.update({course_id: grade})
 
     def get_average_grade(self):
-        if not bool(self.gredes):
-            return np.mean(self.grades.values())
+        if bool(self.grades):
+            return np.mean(list(self.grades.values()))
         else:
             return 404
 
@@ -50,5 +50,5 @@ print(socar)
 aristo = socar.clone()
 aristo.add_grade(Course.Sports.value, 85)
 aristo.add_grade(Course.Physics.value, 75)
-print("Socrates\n", socar)
-print("Socrates copy\n", aristo)
+print("Socrates\n", socar,"\naverage grade= ", socar.get_average_grade())
+print("Socrates copy\n", aristo,"\naverage grade= ", aristo.get_average_grade())
